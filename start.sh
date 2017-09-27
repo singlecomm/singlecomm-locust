@@ -31,9 +31,9 @@ if [ "${LOCUST_MASTER_OR_SLAVE}" = "slave" ] && [ "${LOCUST_MASTER_HOST}" != "" 
 	  -c${LOCUST_CONCURRENT_CLIENTS} \
 	  -r${LOCUST_REQUEST_RATE} \
 	  ${LOCUST_ADDITIONAL_OPTIONS}	
-else if [ "${LOCUST_MASTER_OR_SLAVE}" = "slave" ] && [ "${LOCUST_MASTER_HOST}" = "" ]; then
+elif [ "${LOCUST_MASTER_OR_SLAVE}" = "slave" ] && [ "${LOCUST_MASTER_HOST}" = "" ]; then
 	echo "Please provide a LOCUST_MASTER_HOST variable for Locust slaves"
-else if [ "${LOCUST_MASTER_OR_SLAVE}" = "master" ]; then
+elif [ "${LOCUST_MASTER_OR_SLAVE}" = "master" ]; then
 	locust -f ${LOCUST_TESTS} \
 	  --${LOCUST_MASTER_OR_SLAVE} \
 	  --host=${LOCUST_TEST_HOST} \
@@ -44,5 +44,3 @@ else if [ "${LOCUST_MASTER_OR_SLAVE}" = "master" ]; then
 else
     echo "Please provide a LOCUST_MASTER_HOST variable for Locust slaves"
 fi
-
-

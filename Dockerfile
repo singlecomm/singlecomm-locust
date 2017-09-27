@@ -24,6 +24,6 @@ ADD . /locust
 
 WORKDIR /locust
 
-RUN chmod +x start.sh
+RUN chmod +x /locust/start.sh
 
-CMD start.sh
+CMD /locust/start.sh
